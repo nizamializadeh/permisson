@@ -27,11 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function products(){
+    public function products()
+    {
         return $this->hasMany('App\Product', 'user_id');
     }
-    public function role()
+    public function roles()
     {
-        return $this->belongsToMany(Role::class,'user_roles','role_id');
+        return $this->belongsToMany('App\Role','user__roles','user_id','role_id');
     }
 }

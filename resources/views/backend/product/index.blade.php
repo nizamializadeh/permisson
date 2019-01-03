@@ -1,6 +1,6 @@
 @component('admin.components.table',$settings)
     {{-- Component content--}}
-    @foreach($products as $product)
+    @foreach($products->products as $product)
         <tr>
             <td>{{$product->id}}</td>
             <td>{{$product->name}}</td>
@@ -18,4 +18,5 @@
             </td>
         </tr>
     @endforeach
+
 @endcomponent
